@@ -1,7 +1,7 @@
 {% set name = "requests-oauthlib" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "8886bfec5ad7afb391ed5443b1f697c6f4ae98d0e5620839d8b4499c032ada3f" %}
+{% set hash_val = "eabd8eb700ebed81ba080c6ead96d39d6bdc39996094bd23000204f6965786b0" %}
 
 package:
   name: {{ name }}
@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
