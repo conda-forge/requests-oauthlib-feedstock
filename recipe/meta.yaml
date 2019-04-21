@@ -2,7 +2,7 @@
 {% set version = "1.1.0" %}
 {% set hash_type = "sha256" %}
 {% set hash_val = "eabd8eb700ebed81ba080c6ead96d39d6bdc39996094bd23000204f6965786b0" %}
-{% set data = load_setup_py_data() %}
+
 package:
   name: {{ name }}
   version: {{ version }}
@@ -50,10 +50,10 @@ test:
     - requests_oauthlib.compliance_fixes.weibo
 
 about:
-  home: {{ data.get('url') }}
-  license: {{ data.get('license') }}
+  home: https://github.com/requests/requests-oauthlib
+  license: ISC
   license_family: BSD
-  summary: {{ data.get('description') }}
+  summary: 'OAuthlib authentication support for Requests.'
   description: |
     Requests-OAuthlib
     =========================================================
@@ -93,13 +93,6 @@ about:
     credentials from your provider (e.g. Google) and authorization from the user
     for whom you wish to retrieve resources for. You can read all about this in the
     full [OAuth 2 workflow guide on RTD](https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html).
-
-    Installation
-    -------------
-
-    To install requests and requests_oauthlib you can use pip:
-
-        $ pip install requests requests_oauthlib
 
   dev_url: https://github.com/requests/requests-oauthlib
   doc_url: https://github.com/requests/requests-oauthlib
