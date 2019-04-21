@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About requests-oauthlib
 =======================
 
@@ -13,13 +9,60 @@ Feedstock license: BSD 3-Clause
 
 Summary: OAuthlib authentication support for Requests.
 
+Requests-OAuthlib
+=========================================================
+
+This project provides first-class OAuth library support for [Requests](http://python-requests.org).
+
+The OAuth 1 workflow
+--------------------
+
+OAuth 1 can seem overly complicated and it sure has its quirks. Luckily,
+requests_oauthlib hides most of these and let you focus at the task at hand.
+
+Accessing protected resources using requests_oauthlib is as simple as:
+
+    >>> from requests_oauthlib import OAuth1Session
+    >>> twitter = OAuth1Session('client_key',
+                                client_secret='client_secret',
+                                resource_owner_key='resource_owner_key',
+                                resource_owner_secret='resource_owner_secret')
+    >>> url = 'https://api.twitter.com/1/account/settings.json'
+    >>> r = twitter.get(url)
+
+Before accessing resources you will need to obtain a few credentials from your
+provider (e.g. Twitter) and authorization from the user for whom you wish to
+retrieve resources for. You can read all about this in the full
+[OAuth 1 workflow guide on RTD](https://requests-oauthlib.readthedocs.io/en/latest/oauth1_workflow.html)
+
+The OAuth 2 workflow
+--------------------
+
+OAuth 2 is generally simpler than OAuth 1 but comes in more flavours. The most
+common being the Authorization Code Grant, also known as the WebApplication
+flow.
+
+Fetching a protected resource after obtaining an access token can be extremely
+simple. However, before accessing resources you will need to obtain a few
+credentials from your provider (e.g. Google) and authorization from the user
+for whom you wish to retrieve resources for. You can read all about this in the
+full [OAuth 2 workflow guide on RTD](https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html).
 
 
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/requests-oauthlib-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/requests-oauthlib-feedstock)
+
+<table><tr>
+    
+    <td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3525&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/requests-oauthlib-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -113,5 +156,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@BrentDorsey](https://github.com/BrentDorsey/)
 * [@pmlandwehr](https://github.com/pmlandwehr/)
 
