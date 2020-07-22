@@ -18,13 +18,11 @@ build:
 requirements:
   host:
     - python
-    - pip >=18.1
-    - oauthlib >=2.1.0,<3.0.0
-    - requests >=2.0.0
+    - pip
 
   run:
-    - {{ pin_compatible('oauthlib') }}
-    - {{ pin_compatible('requests') }}
+    - oauthlib >=2.1.0,<3.0.0
+    - requests >=2.0.0
 
 test:
   imports:
