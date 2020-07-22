@@ -1,7 +1,5 @@
 {% set name = "requests-oauthlib" %}
 {% set version = "1.2.0" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "bd6533330e8748e94bf0b214775fed487d309b8b8fe823dc45641ebcd9a32f57" %}
 
 package:
   name: {{ name }}
@@ -10,12 +8,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  sha256: bd6533330e8748e94bf0b214775fed487d309b8b8fe823dc45641ebcd9a32f57
 
 build:
   noarch: python
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -45,3 +43,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - xylar
