@@ -33,14 +33,6 @@ test:
     - requests_oauthlib.oauth2_auth
     - requests_oauthlib.oauth2_session
     - requests_oauthlib.compliance_fixes
-    - requests_oauthlib.compliance_fixes.douban
-    - requests_oauthlib.compliance_fixes.facebook
-    - requests_oauthlib.compliance_fixes.fitbit
-    - requests_oauthlib.compliance_fixes.linkedin
-    - requests_oauthlib.compliance_fixes.mailchimp
-    - requests_oauthlib.compliance_fixes.plentymarkets
-    - requests_oauthlib.compliance_fixes.slack
-    - requests_oauthlib.compliance_fixes.weibo
 
 about:
   home: https://github.com/requests/requests-oauthlib
