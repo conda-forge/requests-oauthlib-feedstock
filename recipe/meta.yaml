@@ -1,5 +1,5 @@
 {% set name = "requests-oauthlib" %}
-{% set version = "1.3.0" %}
+{% set version = "1.3.1" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b4261601a71fd721a8bd6d7aa1cc1d6a8a93b4a9f5e96626f8e4d91e8beeaa6a
+  sha256: 75beac4a47881eeb94d5ea5d6ad31ef88856affe2332b9aafb52c6452ccf0d7a
 
 build:
   noarch: python
@@ -17,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.4
     - pip
 
   run:
-    - python
+    - python >=3.4
     - oauthlib >=3.0.0
     - requests >=2.0.0
 
@@ -33,20 +33,12 @@ test:
     - requests_oauthlib.oauth2_auth
     - requests_oauthlib.oauth2_session
     - requests_oauthlib.compliance_fixes
-    - requests_oauthlib.compliance_fixes.douban
-    - requests_oauthlib.compliance_fixes.facebook
-    - requests_oauthlib.compliance_fixes.fitbit
-    - requests_oauthlib.compliance_fixes.linkedin
-    - requests_oauthlib.compliance_fixes.mailchimp
-    - requests_oauthlib.compliance_fixes.plentymarkets
-    - requests_oauthlib.compliance_fixes.slack
-    - requests_oauthlib.compliance_fixes.weibo
 
 about:
   home: https://github.com/requests/requests-oauthlib
   license: ISC
   license_file: LICENSE
-  summary: 'OAuthlib authentication support for Requests.'
+  summary: OAuthlib authentication support for Requests.
   description: |
     Requests-OAuthlib
     =========================================================
