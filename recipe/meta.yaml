@@ -1,5 +1,5 @@
 {% set name = "requests-oauthlib" %}
-{% set version = "1.4.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/requests-oauthlib-{{ version }}.tar.gz
-  sha256: acee623221e4a39abcbb919312c8ff04bd44e7e417087fb4bd5e2a2f53d5e79a
+  sha256: b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9
 
 build:
   noarch: python
