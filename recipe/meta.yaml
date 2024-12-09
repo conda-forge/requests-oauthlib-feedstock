@@ -6,25 +6,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/requests-oauthlib-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/requests-oauthlib-{{ version }}.tar.gz
   sha256: b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.4
+    - python {{ python_min }}
     - pip
 
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - oauthlib >=3.0.0
     - requests >=2.0.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - requests_oauthlib
     - requests_oauthlib.oauth1_auth
